@@ -6,48 +6,54 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SearchPanel extends JPanel {
+public class SearchPanel extends JPanel implements ActionListener {
 
-    private JLabel targetPostalCodeLabel;
     private JTextField targetPostalCodeField;
-    private JLabel targetCityLabel;
     private JTextField targetCityField;
-    private JLabel targetBuildingNoLabel;
     private JTextField targetBuildingNoField;
-    private JLabel targetAptNoLabel;
     private JTextField targetAptNoField;
-    private JLabel targetStreetLabel;
     private JTextField targetStreetField;
 
-    private JLabel sourcePostalCodeLabel;
     private JTextField sourcePostalCodeField;
-    private JLabel sourceCityLabel;
     private JTextField sourceCityField;
-    private JLabel sourceBuildingNoLabel;
     private JTextField sourceBuildingNoField;
-    private JLabel sourceAptNoLabel;
     private JTextField sourceAptNoField;
-    private JLabel sourceStreetLabel;
     private JTextField sourceStreetField;
 
     private JButton targetClearButton;
     private JButton sourceClearButton;
     private JButton searchButton;
 
+    private StringListener searchListener;
+
     public SearchPanel() {
         Dimension dim = getPreferredSize();
         dim.width = 250;
 
 
-        targetPostalCodeLabel = new JLabel("Postal code: ");
+        sourcePostalCodeField = new JTextField(4);
+        sourceCityField = new JTextField(8);
+        sourceStreetField = new JTextField(8);
+        sourceBuildingNoField = new JTextField(3);
+        sourceAptNoField = new JTextField(3);
+
+        sourceClearButton = new JButton("Clear");
+        sourceClearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sourcePostalCodeField.setText("");
+                sourceCityField.setText("");
+                sourceStreetField.setText("");
+                sourceBuildingNoField.setText("");
+                sourceAptNoField.setText("");
+            }
+        });
+
+
         targetPostalCodeField = new JTextField(4);
-        targetCityLabel = new JLabel("City: ");
         targetCityField = new JTextField(8);
-        targetStreetLabel = new JLabel("Street: ");
         targetStreetField = new JTextField(8);
-        targetBuildingNoLabel = new JLabel("Building no: ");
         targetBuildingNoField = new JTextField(3);
-        targetAptNoLabel = new JLabel("Apartment no: ");
         targetAptNoField = new JTextField(3);
 
         targetClearButton = new JButton("Clear");
@@ -63,42 +69,31 @@ public class SearchPanel extends JPanel {
         });
 
 
-        sourcePostalCodeLabel = new JLabel("Postal code: ");
-        sourcePostalCodeField = new JTextField(4);
-        sourceCityLabel = new JLabel("City: ");
-        sourceCityField = new JTextField(8);
-        sourceStreetLabel = new JLabel("Street: ");
-        sourceStreetField = new JTextField(8);
-        sourceBuildingNoLabel = new JLabel("Building no: ");
-        sourceBuildingNoField = new JTextField(3);
-        sourceAptNoLabel = new JLabel("Apartment no: ");
-        sourceAptNoField = new JTextField(3);
-
-        sourceClearButton = new JButton("Clear");
-        sourceClearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sourcePostalCodeField.setText("");
-                sourceCityField.setText("");
-                sourceStreetField.setText("");
-                sourceBuildingNoField.setText("");
-                sourceAptNoField.setText("");
-            }
-        });
-
         searchButton = new JButton("Search");
+        searchButton.addActionListener(this);
         searchButton.setSize(200, 25);
 
 
+        JLabel targetPostalCodeLabel = new JLabel("Postal code: ");
+        JLabel targetCityLabel = new JLabel("City: ");
+        JLabel targetStreetLabel = new JLabel("Street: ");
+        JLabel targetBuildingNoLabel = new JLabel("Building no: ");
+        JLabel targetAptNoLabel = new JLabel("Apartment no: ");
+
+        JLabel sourcePostalCodeLabel = new JLabel("Postal code: ");
+        JLabel sourceCityLabel = new JLabel("City: ");
+        JLabel sourceStreetLabel = new JLabel("Street: ");
+        JLabel sourceBuildingNoLabel = new JLabel("Building no: ");
+        JLabel sourceAptNoLabel = new JLabel("Apartment no: ");
+
+
         Border innerBorder = BorderFactory.createTitledBorder("Search");
-        Border middleBorder = BorderFactory.createEtchedBorder();
-        Border outerBorder = BorderFactory.createEmptyBorder(5, 10, 5, 5);
-        setBorder(BorderFactory.createCompoundBorder(middleBorder, innerBorder));
+        Border outerBorder = BorderFactory.createEtchedBorder();
+        setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         Insets rowInset = new Insets(0,10,0,10);
-
 
 
         /////////////// TARGET ///////////////
@@ -203,7 +198,7 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 1;
         gbc.gridx = 0;
-        gbc.gridy = 7;
+        gbc.gridy = 8;
         JSeparator sep = new JSeparator();
         gbc.anchor = GridBagConstraints.CENTER;
         sep.setPreferredSize(new Dimension(200,1));
@@ -216,7 +211,7 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.75;
         gbc.gridx = 0;
-        gbc.gridy = 8;
+        gbc.gridy = 9;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(new JLabel("Source address:"), gbc);
@@ -225,14 +220,14 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.5;
         gbc.gridx = 0;
-        gbc.gridy = 9;
+        gbc.gridy = 10;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourcePostalCodeLabel, gbc);
 
         gbc.weighty = 0.25;
         gbc.gridx = 0;
-        gbc.gridy = 10;
+        gbc.gridy = 11;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourcePostalCodeField, gbc);
@@ -241,14 +236,14 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.5;
         gbc.gridx = 1;
-        gbc.gridy = 9;
+        gbc.gridy = 10;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceCityLabel, gbc);
 
         gbc.weighty = 0.25;
         gbc.gridx = 1;
-        gbc.gridy = 10;
+        gbc.gridy = 11;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceCityField, gbc);
@@ -257,14 +252,14 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.5;
         gbc.gridx = 0;
-        gbc.gridy = 11;
+        gbc.gridy = 12;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceStreetLabel, gbc);
 
         gbc.weighty = 0.25;
         gbc.gridx = 0;
-        gbc.gridy = 12;
+        gbc.gridy = 13;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceStreetField, gbc);
@@ -273,14 +268,14 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.5;
         gbc.gridx = 1;
-        gbc.gridy = 11;
+        gbc.gridy = 12;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceBuildingNoLabel, gbc);
 
         gbc.weighty = 0.25;
         gbc.gridx = 1;
-        gbc.gridy = 12;
+        gbc.gridy = 13;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceBuildingNoField, gbc);
@@ -289,14 +284,14 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.5;
         gbc.gridx = 0;
-        gbc.gridy = 13;
+        gbc.gridy = 14;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceAptNoLabel, gbc);
 
         gbc.weighty = 0.25;
         gbc.gridx = 0;
-        gbc.gridy = 14;
+        gbc.gridy = 15;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
         add(sourceAptNoField, gbc);
@@ -305,7 +300,7 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 0.25;
         gbc.gridx = 1;
-        gbc.gridy = 14;
+        gbc.gridy = 15;
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(sourceClearButton, gbc);
 
@@ -314,7 +309,7 @@ public class SearchPanel extends JPanel {
         gbc.weightx = 1;
         gbc.weighty = 1;
         gbc.gridx = 0;
-        gbc.gridy = 15;
+        gbc.gridy = 16;
         JSeparator sep2 = new JSeparator();
         gbc.anchor = GridBagConstraints.CENTER;
         sep2.setPreferredSize(new Dimension(200,1));
@@ -327,10 +322,26 @@ public class SearchPanel extends JPanel {
         gbc.weighty = 3;
 
         gbc.gridx = 0;
-        gbc.gridy = 16;
+        gbc.gridy = 17;
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.gridwidth = 2;
         add(searchButton, gbc);
+    }
 
+    public void setSearchListener(StringListener listener) {
+        this.searchListener = listener;
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton clicked = (JButton)e.getSource();
+
+
+        if(clicked == searchButton) {
+            if(searchListener != null) {
+                searchListener.textEmitted("text\n");
+            }
+        }
     }
 }

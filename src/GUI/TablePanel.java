@@ -13,18 +13,14 @@ public class TablePanel extends JPanel {
     private JButton modifyFromFile;
 
     public TablePanel() {
-        setPreferredSize(new Dimension(500,700));
         setLayout(new GridBagLayout());
 
-
         add = new JButton("Add");
-        add.setSize(new Dimension(60,30));
         addFromFile = new JButton("Add from file");
         delete = new JButton("Delete");
         deleteFromFile = new JButton("Delete from file");
         modify = new JButton("Modify");
         modifyFromFile = new JButton("Modify from file");
-
 
         GridBagConstraints gc = new GridBagConstraints();
 
@@ -44,19 +40,13 @@ public class TablePanel extends JPanel {
         gc.gridx = 1;
         gc.gridy = 0;
 
-/*
+
         add(add);
         add(addFromFile);
         add(delete);
         add(deleteFromFile);
         add(modify);
         add(modifyFromFile);
-
- */
-
-
-
-
 
     }
 

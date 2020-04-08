@@ -2,18 +2,40 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.security.Key;
 
 public class TopToolbar extends JMenuBar{
 
     private JMenuBar menuBar;
 
-    private JMenu file;
-    private JMenu edit;
-    private JMenu tools;
-    private JMenu about;
+    private JMenu fileMenu;
+    private JMenu editMenu;
+    private JMenu toolsMenu;
+    private JMenu viewMenu;
+    private JMenu aboutMenu;
 
     private JButton open;
     private JButton save;
+
+    private JMenuItem newItem;
+    private JMenuItem openItem;
+    private JMenuItem saveItem;
+    private JMenuItem saveAsItem;
+    private JMenuItem exitItem;
+
+    private JMenuItem fullscreenItem;
+    /*
+    private JMenuItem ;
+    private JMenuItem ;
+    private JMenuItem ;
+    private JMenuItem ;
+    private JMenuItem ;
+    private JMenuItem ;
+     */
+
 
     public TopToolbar() {
 
@@ -22,45 +44,81 @@ public class TopToolbar extends JMenuBar{
 
         Dimension menuSize = new JMenuItem().getPreferredSize();
         menuSize.width = 50;
-        menuSize.height = 25;
+        menuSize.height = 15;
 
         //Main menu containing file operations
         menuBar.add(new JLabel(" |"));
-        file = new JMenu("   File");
-        file.setPreferredSize(menuSize);
+        fileMenu = new JMenu("   File");
+        fileMenu.setMnemonic(KeyEvent.VK_F);
+        fileMenu.setPreferredSize(menuSize);
 
-        file.add(new JMenuItem("New"));
-        file.add(new JMenuItem("Open"));
-        file.add(new JMenuItem("Save"));
-        file.add(new JMenuItem("Save as"));
-        file.addSeparator();
-        file.add(new JMenuItem("Close"));
-        file.add(new JMenuItem("Exit"));
-        menuBar.add(file);
+        //Instantiating File menu items
+
+        exitItem = new JMenuItem("Exit");
+        exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.ALT_MASK));
+        exitItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                int action = JOptionPane.showConfirmDialog(TopToolbar.this,
+                        "Are You sure You want to exit?",
+                        "Confitm Exit", JOptionPane.OK_CANCEL_OPTION|JOptionPane.WARNING_MESSAGE);
+                if(action == JOptionPane.OK_OPTION) {
+                    System.exit(0);
+                }
+            }
+        });
+
+        fileMenu.add(new JMenuItem("New"));
+        fileMenu.add(new JMenuItem("Open"));
+        fileMenu.add(new JMenuItem("Save"));
+        fileMenu.add(new JMenuItem("Save as"));
+        fileMenu.addSeparator();
+        fileMenu.add(exitItem);
+        menuBar.add(fileMenu);
 
 
         //Secondary menu containing edit operations
         menuBar.add(new JLabel("|"));
-        edit = new JMenu("   Edit");
-        edit.setPreferredSize(menuSize);
+        editMenu = new JMenu("   Edit");
+        editMenu.setPreferredSize(menuSize);
 
-        edit.add(new JMenuItem("Test1"));
-        edit.add(new JMenuItem("Test2"));
-        edit.add(new JMenuItem("Test3"));
-        edit.add(new JMenuItem("Test4"));
-        edit.add(new JMenuItem("Test5"));
-        menuBar.add(edit);
+        editMenu.add(new JMenuItem("Test1"));
+        editMenu.add(new JMenuItem("Test2"));
+        editMenu.add(new JMenuItem("Test3"));
+        editMenu.add(new JMenuItem("Test4"));
+        editMenu.add(new JMenuItem("Test5"));
+        menuBar.add(editMenu);
 
+
+        //Secondary menu containing view preferences
+        menuBar.add(new JLabel("|"));
+        viewMenu = new JMenu("   View");
+        viewMenu.setPreferredSize(menuSize);
+
+        fullscreenItem = new JMenuItem("Fullscreen");
+        fullscreenItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, ActionEvent.ALT_MASK));
+        /*
+        fullscreenItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+            }
+        });
+        
+         */
+
+        editMenu.add(fullscreenItem);
+        menuBar.add(viewMenu);
 
         //Secondary menu containing additional tools
         menuBar.add(new JLabel("|"));
-        tools = new JMenu(" Tools");
-        tools.setPreferredSize(menuSize);
+        toolsMenu = new JMenu(" Tools");
+        toolsMenu.setPreferredSize(menuSize);
 
-        tools.add(new JMenuItem("Test1"));
-        tools.add(new JMenuItem("Test2"));
-        tools.add(new JMenuItem("Test3"));
-        menuBar.add(tools);
+        toolsMenu.add(new JMenuItem("Test1"));
+        toolsMenu.add(new JMenuItem("Test2"));
+        toolsMenu.add(new JMenuItem("Test3"));
+        menuBar.add(toolsMenu);
         menuBar.add(new JLabel("|"));
 
 
@@ -69,14 +127,18 @@ public class TopToolbar extends JMenuBar{
 
         //Secondary menu containing operations considering version and description
         menuBar.add(new JLabel("|"));
-        about = new JMenu("About ");
-        about.setPreferredSize(menuSize);
+        aboutMenu = new JMenu("About ");
+        aboutMenu.setPreferredSize(menuSize);
 
-        about.add(new JMenuItem("Version"));
-        about.add(new JMenuItem("About"));
-        about.add(new JMenuItem("Help"));
-        menuBar.add(about);
+        aboutMenu.add(new JMenuItem("Version"));
+        aboutMenu.add(new JMenuItem("About"));
+        aboutMenu.add(new JMenuItem("Help"));
+        menuBar.add(aboutMenu);
         menuBar.add(new JLabel("| "));
-        //about.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+
+
+
+
+
     }
 }
