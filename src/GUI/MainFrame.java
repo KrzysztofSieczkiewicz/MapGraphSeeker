@@ -36,6 +36,9 @@ public class MainFrame extends JFrame {
         searchPanel = new SearchPanel();
         textPanel = new TextPanel();
 
+        fileChooser = new JFileChooser();
+        //fileChooser.addChoosebleFileFilter();
+
         searchPanel.setSearchListener(new StringListener() {
            public void textEmitted(String text) {
                textPanel.appendText(text);
@@ -73,15 +76,31 @@ public class MainFrame extends JFrame {
 
         //Instantiating File menu items
         JMenuItem loadItem = new JMenuItem("Load");
-        loadItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
+        loadItem.setMnemonic(KeyEvent.VK_O);
+        loadItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
         loadItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                fileChooser.showOpenDialog(MainFrame.this);
+                if(fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
+                    System.out.println(fileChooser.getSelectedFile());
+                }
+            }
+        });
+
+        JMenuItem saveItem = new JMenuItem("Save");
+        saveItem.setMnemonic(KeyEvent.VK_S);
+        saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+        saveItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(fileChooser.showSaveDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
+                    System.out.println(fileChooser.getSelectedFile());
+                }
             }
         });
 
         JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.setMnemonic(KeyEvent.VK_E);
         exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.ALT_MASK));
         exitItem.addActionListener(new ActionListener() {
             @Override
@@ -95,10 +114,10 @@ public class MainFrame extends JFrame {
             }
         });
 
-        
+
         fileMenu.add(new JMenuItem("New"));
         fileMenu.add(loadItem);
-        fileMenu.add(new JMenuItem("Save"));
+        fileMenu.add(saveItem);
         fileMenu.add(new JMenuItem("Save as"));
         fileMenu.addSeparator();
         fileMenu.add(exitItem);
