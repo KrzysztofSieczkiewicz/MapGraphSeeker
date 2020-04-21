@@ -1,12 +1,12 @@
-package GUI;
+package GUI.SearchPanel;
+
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class SearchPanel extends JPanel implements ActionListener {
+
+public class SearchPanel extends JPanel {
 
     private JTextField targetPostalCodeField;
     private JTextField targetCityField;
@@ -24,7 +24,7 @@ public class SearchPanel extends JPanel implements ActionListener {
     private JButton sourceClearButton;
     private JButton searchButton;
 
-    private StringListener searchListener;
+    private SearchListener searchListener;
 
     public SearchPanel() {
         Dimension dim = getPreferredSize();
@@ -64,8 +64,28 @@ public class SearchPanel extends JPanel implements ActionListener {
 
 
         searchButton = new JButton("Search");
-        searchButton.addActionListener(this);
         searchButton.setSize(200, 25);
+        searchButton.addActionListener(e -> {
+            String targetPostalCode = targetPostalCodeField.getText();
+            String targetCity =  targetCityField.getText();
+            String targetBuildingNo = targetBuildingNoField.getText();
+            String targetAptNo = targetAptNoField.getText();
+            String targetStreet = targetStreetField.getText();
+
+            String sourcePostalCode = sourcePostalCodeField.getText();
+            String sourceCity = sourceCityField.getText();
+            String sourceBuildingNo = sourceBuildingNoField.getText();
+            String sourceAptNo = sourceAptNoField.getText();
+            String sourceStreet = sourceStreetField.getText();
+
+            SearchEvent se = new SearchEvent(this, targetPostalCode, targetCity, targetBuildingNo,
+                    targetAptNo, targetStreet, sourcePostalCode, sourceCity, sourceBuildingNo,
+                    sourceAptNo, sourceStreet);
+
+            if(searchListener != null) {
+                searchListener.searchEventOccured(se);
+            }
+        });
 
 
         JLabel targetPostalCodeLabel = new JLabel("Postal code: ");
@@ -323,19 +343,8 @@ public class SearchPanel extends JPanel implements ActionListener {
     }
 
 
-    public void setSearchListener(StringListener listener) {
+    public void setSearchListener(SearchListener listener) {
         this.searchListener = listener;
     }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        JButton clicked = (JButton)e.getSource();
-
-        if(clicked == searchButton) {
-            if(searchListener != null) {
-                searchListener.textEmitted("text\n");
-            }
-        }
-    }
 }

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6e371a26-a4c3-425b-acc8-9972c47c9023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StringListener.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -101,11 +104,11 @@
       <screen x="1366" y="0" width="1378" height="900" />
     </state>
     <state x="1647" y="108" key="#Auto_Import/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585847661520" />
-    <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser" timestamp="1587492791379">
+    <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser" timestamp="1587497531828">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="457" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586415705697" />
-    <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587492791379" />
+    <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587497531828" />
     <state x="448" y="269" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586082785160">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -162,11 +165,12 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="34" y="4" key="new project wizard/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586516663165" />
-    <state x="326" y="175" key="run.anything.popup" timestamp="1586087800051">
-      <screen x="0" y="0" width="1304" height="768" />
+    <state x="342" y="175" key="run.anything.popup" timestamp="1587497007161">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="326" y="175" key="run.anything.popup/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586087800051" />
     <state x="1711" y="205" key="run.anything.popup/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585847806381" />
+    <state x="342" y="175" key="run.anything.popup/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587497007161" />
     <state x="315" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1586020019960">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

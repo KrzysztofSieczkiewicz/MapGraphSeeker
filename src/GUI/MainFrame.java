@@ -1,5 +1,8 @@
 package GUI;
 
+import GUI.SearchPanel.SearchEvent;
+import GUI.SearchPanel.SearchListener;
+import GUI.SearchPanel.SearchPanel;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -17,7 +20,6 @@ public class MainFrame extends JFrame {
     private SearchPanel searchPanel;
     private JFileChooser fileChooser;
 
-    private TextPanel textPanel;
 
     public MainFrame() {
 
@@ -34,12 +36,17 @@ public class MainFrame extends JFrame {
         setJMenuBar(createMenuBar());
         tablePanel = new TablePanel();
         searchPanel = new SearchPanel();
-        textPanel = new TextPanel();
 
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PointMap file", "mgsPM"));
 
-        searchPanel.setSearchListener((text) -> textPanel.appendText(text));
+        // For later use in generating google map search url
+        searchPanel.setSearchListener((ev) -> {
+                String name = ev.getSourceAptNo();
+                String occupation = ev.getSourceBuildingNo();
+
+                System.out.println("Name: " + name +", Occupation: " + occupation);
+        });
 
 
         //add(textPanel, BorderLayout.CENTER);
