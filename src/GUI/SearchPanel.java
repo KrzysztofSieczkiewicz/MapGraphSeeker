@@ -38,15 +38,12 @@ public class SearchPanel extends JPanel implements ActionListener {
         sourceAptNoField = new JTextField(3);
 
         sourceClearButton = new JButton("Clear");
-        sourceClearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        sourceClearButton.addActionListener(event -> {
                 sourcePostalCodeField.setText("");
                 sourceCityField.setText("");
                 sourceStreetField.setText("");
                 sourceBuildingNoField.setText("");
                 sourceAptNoField.setText("");
-            }
         });
 
 
@@ -57,15 +54,12 @@ public class SearchPanel extends JPanel implements ActionListener {
         targetAptNoField = new JTextField(3);
 
         targetClearButton = new JButton("Clear");
-        targetClearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        targetClearButton.addActionListener(event -> {
                 targetPostalCodeField.setText("");
                 targetCityField.setText("");
                 targetStreetField.setText("");
                 targetBuildingNoField.setText("");
                 targetAptNoField.setText("");
-            }
         });
 
 
@@ -328,6 +322,7 @@ public class SearchPanel extends JPanel implements ActionListener {
         add(searchButton, gbc);
     }
 
+
     public void setSearchListener(StringListener listener) {
         this.searchListener = listener;
     }
@@ -336,7 +331,6 @@ public class SearchPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton clicked = (JButton)e.getSource();
-
 
         if(clicked == searchButton) {
             if(searchListener != null) {

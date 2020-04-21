@@ -2,9 +2,9 @@ package GUI;
 
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 
@@ -37,17 +37,14 @@ public class MainFrame extends JFrame {
         textPanel = new TextPanel();
 
         fileChooser = new JFileChooser();
-        //fileChooser.addChoosebleFileFilter();
+        fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PointMap file", "mgsPM"));
 
-        searchPanel.setSearchListener(new StringListener() {
-           public void textEmitted(String text) {
-               textPanel.appendText(text);
-           }
-        });
+        searchPanel.setSearchListener((text) -> textPanel.appendText(text));
 
 
-        add(textPanel, BorderLayout.CENTER);
+        //add(textPanel, BorderLayout.CENTER);
         add(searchPanel, BorderLayout.WEST);
+        add(tablePanel, BorderLayout.CENTER);
     }
 
 
@@ -57,6 +54,7 @@ public class MainFrame extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         Dimension menuSize = new JMenuItem().getPreferredSize();
         menuSize.width = 50;
+        menuSize.height = 20;
 
 
         //List of used menus
@@ -78,39 +76,30 @@ public class MainFrame extends JFrame {
         JMenuItem loadItem = new JMenuItem("Load");
         loadItem.setMnemonic(KeyEvent.VK_O);
         loadItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
-        loadItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                if(fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
-                    System.out.println(fileChooser.getSelectedFile());
-                }
+        loadItem.addActionListener(actionEvent -> {
+            if(fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
+                System.out.println(fileChooser.getSelectedFile());
             }
         });
 
         JMenuItem saveItem = new JMenuItem("Save");
         saveItem.setMnemonic(KeyEvent.VK_S);
         saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-        saveItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                if(fileChooser.showSaveDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
-                    System.out.println(fileChooser.getSelectedFile());
-                }
+        saveItem.addActionListener(actionEvent -> {
+            if(fileChooser.showSaveDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
+                System.out.println(fileChooser.getSelectedFile());
             }
         });
 
         JMenuItem exitItem = new JMenuItem("Exit");
         exitItem.setMnemonic(KeyEvent.VK_E);
         exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.ALT_MASK));
-        exitItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                int action = JOptionPane.showConfirmDialog(MainFrame.this,
-                        "Are You sure You want to exit?",
-                        "Confitm Exit", JOptionPane.OK_CANCEL_OPTION|JOptionPane.WARNING_MESSAGE);
-                if(action == JOptionPane.OK_OPTION) {
-                    System.exit(0);
-                }
+        exitItem.addActionListener(arg0 -> {
+            int action = JOptionPane.showConfirmDialog(MainFrame.this,
+                    "Are You sure You want to exit?",
+                    "Confitm Exit", JOptionPane.OK_CANCEL_OPTION|JOptionPane.WARNING_MESSAGE);
+            if(action == JOptionPane.OK_OPTION) {
+                System.exit(0);
             }
         });
 
