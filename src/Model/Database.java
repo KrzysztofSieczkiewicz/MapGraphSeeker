@@ -6,6 +6,7 @@ import java.util.List;
 public class Database {
 
     private ArrayList<Path> paths;
+    private ArrayList<PathInput> pathInputs;
 
     public Database() {
         paths = new ArrayList<Path>();
@@ -13,6 +14,10 @@ public class Database {
 
     public void addPath(Path path) {
         paths.add(path);
+    }
+
+    public void addPathInput(PathInput pathInput) {
+        pathInputs.add(pathInput);
     }
 
     public List<Path> getPath() {

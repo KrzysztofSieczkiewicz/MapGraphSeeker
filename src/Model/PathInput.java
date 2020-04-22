@@ -2,7 +2,7 @@ package Model;
 
 import java.util.HashMap;
 
-public class Path {
+public class PathInput {
 
     private String targetPostalCode;
     private String targetCity;
@@ -16,15 +16,10 @@ public class Path {
     private String sourceAptNo;
     private String sourceStreet;
 
-    private String closestToTarget;
-    private String closestToSource;
-    private HashMap<Integer, String> intermediaries;
-
-
-    public Path(String targetPostalCode, String targetCity, String targetBuildingNo,
+    public PathInput(String targetPostalCode, String targetCity, String targetBuildingNo,
                 String targetAptNo, String targetStreet, String sourcePostalCode,
                 String sourceCity, String sourceBuildingNo, String sourceAptNo,
-                String sourceStreet, String closestToTarget, String closestToSource) {
+                String sourceStreet) {
 
         this.targetPostalCode = targetPostalCode;
         this.targetCity = targetCity;
@@ -37,9 +32,6 @@ public class Path {
         this.sourceBuildingNo = sourceBuildingNo;
         this.sourceAptNo = sourceAptNo;
         this.sourceStreet = sourceStreet;
-
-        this.closestToTarget = closestToTarget;
-        this.closestToSource = closestToSource;
 
     }
 
@@ -123,27 +115,4 @@ public class Path {
         this.sourceStreet = sourceStreet;
     }
 
-    public String getClosestToTarget() {
-        return closestToTarget;
-    }
-
-    public void setClosestToTarget(String closestToTarget) {
-        this.closestToTarget = closestToTarget;
-    }
-
-    public String getClosestToSource() {
-        return closestToSource;
-    }
-
-    public void setClosestToSource(String closestToSource) {
-        this.closestToSource = closestToSource;
-    }
-
-    public HashMap<Integer, String> getIntermediaries() {
-        return intermediaries;
-    }
-
-    public void setIntermediaries(HashMap<Integer, String> intermediaries) {
-        this.intermediaries = intermediaries;
-    }
 }
