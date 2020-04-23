@@ -20,7 +20,7 @@ public class Database {
         pathInputs.add(pathInput);
     }
 
-    public List<Path> getPath() {
+    public List<Path> getPaths() {
         return paths;
     }
 }

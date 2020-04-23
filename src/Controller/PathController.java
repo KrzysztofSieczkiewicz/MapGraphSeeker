@@ -1,13 +1,23 @@
 package Controller;
 
 import GUI.SearchPanel.SearchEvent;
+import Model.Database;
+import Model.Path;
 import Model.PathInput;
+
+import java.util.List;
 
 public class PathController {
 
     private static PathController pathController;
 
+    Database db = new Database();
+
     private PathController() {
+    }
+
+    public List<Path> getPaths() {
+        return db.getPaths();
     }
 
     public static PathController getInstance() {

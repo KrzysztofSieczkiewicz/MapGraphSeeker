@@ -30,20 +30,21 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
 
         setJMenuBar(createMenuBar());
+
+        pathController = PathController.getInstance();
+
         tablePanel = new TablePanel();
+        tablePanel.setData(pathController.getPaths());
+
         searchPanel = new SearchPanel();
+        searchPanel.setSearchListener((se) -> {
+            pathController.findPath(se);
+            tablePanel.refresh();
+        });
 
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PointMap file", "mgsPM"));
 
-        pathController = PathController.getInstance();
-        // For later use in generating google map search url
-        searchPanel.setSearchListener((se) -> {
-            pathController.findPath(se);
-        });
-
-
-        //add(textPanel, BorderLayout.CENTER);
         add(searchPanel, BorderLayout.WEST);
         add(tablePanel, BorderLayout.CENTER);
     }

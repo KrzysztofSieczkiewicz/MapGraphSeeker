@@ -1,53 +1,34 @@
 package GUI;
 
+import Model.Path;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
+
 
 public class TablePanel extends JPanel {
 
-    private JButton add;
-    private JButton addFromFile;
-    private JButton delete;
-    private JButton deleteFromFile;
-    private JButton modify;
-    private JButton modifyFromFile;
+    private JTable table;
+    private PathTableModel pathTableModel;
 
     public TablePanel() {
-        setLayout(new GridBagLayout());
 
-        add = new JButton("Add");
-        addFromFile = new JButton("Add from file");
-        delete = new JButton("Delete");
-        deleteFromFile = new JButton("Delete from file");
-        modify = new JButton("Modify");
-        modifyFromFile = new JButton("Modify from file");
+        pathTableModel = new PathTableModel();
+        table = new JTable(pathTableModel);
 
-        GridBagConstraints gc = new GridBagConstraints();
+        setLayout(new BorderLayout());
 
-        //////////////////// Table ////////////////////
-        gc.weightx = 0.75;
-        gc.weighty = 0.75;
-
-        gc.gridx = 0;
-        gc.gridy = 0;
-
-        add(new JLabel("Test text"));
-
-        //////////////////// Buttons panel ////////////////////
-        gc.weightx = 0.25;
-        gc.weighty = 0.25;
-
-        gc.gridx = 1;
-        gc.gridy = 0;
-
-
-        add(add);
-        add(addFromFile);
-        add(delete);
-        add(deleteFromFile);
-        add(modify);
-        add(modifyFromFile);
-
+        add(table, BorderLayout.CENTER);
+        add(table.getTableHeader(), BorderLayout.NORTH);
+        this.refresh();
     }
 
+    public void setData(List<Path> db) {
+        pathTableModel.setData(db);
+    }
+
+    public void refresh() {
+        pathTableModel.fireTableDataChanged();
+    }
 }
