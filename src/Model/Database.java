@@ -3,6 +3,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Database {
 
     private ArrayList<Path> paths;

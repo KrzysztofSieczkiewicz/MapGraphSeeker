@@ -13,9 +13,9 @@ import java.awt.event.KeyEvent;
 public class MainFrame extends JFrame {
 
     private TablePanel tablePanel;
-    private SearchPanel searchPanel;
     private JFileChooser fileChooser;
     private PathController pathController;
+    private TabbedInputPanel tabbedInputPanel;
 
     public MainFrame() {
 
@@ -36,8 +36,8 @@ public class MainFrame extends JFrame {
         tablePanel = new TablePanel();
         tablePanel.setData(pathController.getPaths());
 
-        searchPanel = new SearchPanel();
-        searchPanel.setSearchListener((se) -> {
+        tabbedInputPanel = new TabbedInputPanel();
+        tabbedInputPanel.getSearchPanel().setSearchListener((se) -> {
             pathController.findPath(se);
             tablePanel.refresh();
         });
@@ -45,7 +45,7 @@ public class MainFrame extends JFrame {
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PointMap file", "mgsPM"));
 
-        add(searchPanel, BorderLayout.WEST);
+        add(tabbedInputPanel, BorderLayout.WEST);
         add(tablePanel, BorderLayout.CENTER);
     }
 

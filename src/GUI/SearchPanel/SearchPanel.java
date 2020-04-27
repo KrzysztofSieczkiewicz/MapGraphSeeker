@@ -1,6 +1,5 @@
 package GUI.SearchPanel;
 
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -20,10 +19,6 @@ public class SearchPanel extends JPanel {
     private JTextField sourceAptNoField;
     private JTextField sourceStreetField;
 
-    private JButton targetClearButton;
-    private JButton sourceClearButton;
-    private JButton searchButton;
-
     private SearchListener searchListener;
 
     public SearchPanel() {
@@ -37,7 +32,7 @@ public class SearchPanel extends JPanel {
         sourceBuildingNoField = new JTextField(3);
         sourceAptNoField = new JTextField(3);
 
-        sourceClearButton = new JButton("Clear");
+        JButton sourceClearButton = new JButton("Clear");
         sourceClearButton.addActionListener(event -> {
                 sourcePostalCodeField.setText("");
                 sourceCityField.setText("");
@@ -53,7 +48,7 @@ public class SearchPanel extends JPanel {
         targetBuildingNoField = new JTextField(3);
         targetAptNoField = new JTextField(3);
 
-        targetClearButton = new JButton("Clear");
+        JButton targetClearButton = new JButton("Clear");
         targetClearButton.addActionListener(event -> {
                 targetPostalCodeField.setText("");
                 targetCityField.setText("");
@@ -63,7 +58,7 @@ public class SearchPanel extends JPanel {
         });
 
 
-        searchButton = new JButton("Search");
+        JButton searchButton = new JButton("Search");
         searchButton.setSize(200, 25);
         searchButton.addActionListener(e -> {
             String targetPostalCode = targetPostalCodeField.getText();
