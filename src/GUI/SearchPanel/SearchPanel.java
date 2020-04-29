@@ -22,9 +22,6 @@ public class SearchPanel extends JPanel {
     private SearchListener searchListener;
 
     public SearchPanel() {
-        Dimension dim = getPreferredSize();
-        dim.width = 250;
-
 
         sourcePostalCodeField = new JTextField(4);
         sourceCityField = new JTextField(8);
@@ -328,7 +325,7 @@ public class SearchPanel extends JPanel {
 
         ///// Temporary rest /////
         gbc.weightx = 2;
-        gbc.weighty = 3;
+        gbc.weighty = 10;
 
         gbc.gridx = 0;
         gbc.gridy = 17;

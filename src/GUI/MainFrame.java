@@ -1,7 +1,6 @@
 package GUI;
 
 import Controller.PathController;
-import GUI.SearchPanel.SearchPanel;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
