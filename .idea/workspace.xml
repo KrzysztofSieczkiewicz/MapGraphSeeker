@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e371a26-a4c3-425b-acc8-9972c47c9023" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/SearchTab_icon_byFreepik - original.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/MainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/PointPanel/PointPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/PointPanel/PointPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/SearchPanel/SearchPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/SearchPanel/SearchPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/MapGraphSeeker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/MapGraphSeeker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/PointPanel/PointPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapGraphSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapGraphSeeker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +115,11 @@
       <screen x="1366" y="0" width="1378" height="900" />
     </state>
     <state x="1647" y="108" key="#Auto_Import/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585847661520" />
-    <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser" timestamp="1587661085280">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="479" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1588170436049">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="457" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586415705697" />
+    <state x="479" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588170436049" />
     <state x="479" y="93" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587661085280" />
     <state x="448" y="269" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586082785160">
       <screen x="0" y="0" width="1304" height="768" />
@@ -136,33 +135,33 @@
     </state>
     <state x="463" y="132" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588062971311" />
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587553340675" />
-    <state width="1323" height="138" key="GridCell.Tab.0.bottom" timestamp="1588150456631">
+    <state width="1323" height="138" key="GridCell.Tab.0.bottom" timestamp="1588170591346">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.0.bottom/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586516666127" />
     <state width="1335" height="139" key="GridCell.Tab.0.bottom/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585849362099" />
-    <state width="1323" height="138" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588150456631" />
+    <state width="1323" height="138" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588170591346" />
     <state width="1323" height="138" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587990463256" />
-    <state width="1323" height="138" key="GridCell.Tab.0.center" timestamp="1588150456631">
+    <state width="1323" height="138" key="GridCell.Tab.0.center" timestamp="1588170591345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.0.center/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586516666127" />
     <state width="1335" height="139" key="GridCell.Tab.0.center/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585849362098" />
-    <state width="1323" height="138" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588150456631" />
+    <state width="1323" height="138" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588170591345" />
     <state width="1323" height="138" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587990463255" />
-    <state width="1323" height="138" key="GridCell.Tab.0.left" timestamp="1588150456630">
+    <state width="1323" height="138" key="GridCell.Tab.0.left" timestamp="1588170591345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.0.left/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586516666126" />
     <state width="1335" height="139" key="GridCell.Tab.0.left/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585849362097" />
-    <state width="1323" height="138" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588150456630" />
+    <state width="1323" height="138" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588170591345" />
     <state width="1323" height="138" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587990463255" />
-    <state width="1323" height="138" key="GridCell.Tab.0.right" timestamp="1588150456631">
+    <state width="1323" height="138" key="GridCell.Tab.0.right" timestamp="1588170591346">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.0.right/0.0.1304.768/1366.0.1378.900@0.0.1304.768" timestamp="1586516666127" />
     <state width="1335" height="139" key="GridCell.Tab.0.right/0.0.1304.768/1366.0.1378.900@1366.0.1378.900" timestamp="1585849362098" />
-    <state width="1323" height="138" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588150456631" />
+    <state width="1323" height="138" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1378.900@0.0.1366.728" timestamp="1588170591346" />
     <state width="1323" height="138" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1587990463256" />
     <state width="1261" height="239" key="GridCell.Tab.1.bottom" timestamp="1586516666128">
       <screen x="0" y="0" width="1304" height="768" />

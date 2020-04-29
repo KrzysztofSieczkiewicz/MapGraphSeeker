@@ -38,7 +38,6 @@ public class SearchPanel extends JPanel {
                 sourceAptNoField.setText("");
         });
 
-
         targetPostalCodeField = new JTextField(4);
         targetCityField = new JTextField(8);
         targetStreetField = new JTextField(8);
@@ -53,7 +52,6 @@ public class SearchPanel extends JPanel {
                 targetBuildingNoField.setText("");
                 targetAptNoField.setText("");
         });
-
 
         JButton searchButton = new JButton("Search");
         searchButton.setSize(200, 25);
@@ -325,7 +323,7 @@ public class SearchPanel extends JPanel {
 
         ///// Temporary rest /////
         gbc.weightx = 2;
-        gbc.weighty = 10;
+        gbc.weighty = 20;
 
         gbc.gridx = 0;
         gbc.gridy = 17;

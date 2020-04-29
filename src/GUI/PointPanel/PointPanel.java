@@ -1,5 +1,8 @@
 package GUI.PointPanel;
 
+import GUI.SearchPanel.SearchEvent;
+import GUI.SearchPanel.SearchListener;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -13,6 +16,7 @@ public class PointPanel extends JPanel {
     private JTextField addPointBuildingNoField;
     private JTextField addPointAptNoField;
 
+    private PointListener pointListener;
 
     public PointPanel() {
         Dimension dim = getPreferredSize();
@@ -32,6 +36,31 @@ public class PointPanel extends JPanel {
         JLabel addPointBuildingNoLabel = new JLabel("Building no: ");
         JLabel addPointAptNoLabel = new JLabel("Apartment no: ");
 
+        JButton clearButton = new JButton("Clear");
+        clearButton.addActionListener(event -> {
+            addPointPostalCodeField.setText("");
+            addPointCityField.setText("");
+            addPointStreetField.setText("");
+            addPointBuildingNoField.setText("");
+            addPointAptNoField.setText("");
+        });
+
+        JButton addButton = new JButton("Add");
+        addButton.setSize(200, 25);
+        addButton.addActionListener(e -> {
+            String pointPostalCode = addPointPostalCodeField.getText();
+            String pointCity =  addPointCityField.getText();
+            String pointStreet = addPointStreetField.getText();
+            String pointBuildingNo = addPointBuildingNoField.getText();
+            String pointAptNo = addPointAptNoField.getText();
+
+            PointEvent se = new PointEvent(this, pointPostalCode, pointCity, pointStreet,
+                    pointBuildingNo, pointAptNo);
+
+            if(pointListener != null) {
+                pointListener.pointEventOccured(se);
+            }
+        });
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -114,6 +143,19 @@ public class PointPanel extends JPanel {
         gbc.gridx = 1;
         add(addPointAptNoField, gbc);
 
+
+        //// Add and Clear button ////
+        gbc.weightx = 1;
+        gbc.weighty = 0.5;
+        gbc.gridx = 0;
+        gbc.gridy++;
+        gbc.insets = rowInset;
+        gbc.anchor = GridBagConstraints.LINE_START;
+        add(addButton, gbc);
+
+        gbc.gridx = 1;
+        add(clearButton, gbc);
+
         /////////////// SEPARATOR ///////////////
         gbc.weightx = 1;
         gbc.weighty = 1;
@@ -134,6 +176,10 @@ public class PointPanel extends JPanel {
         gbc.gridy++;
         gbc.insets = rowInset;
         gbc.anchor = GridBagConstraints.LINE_START;
-
     }
+
+    public void setPointListener(PointListener listener) {
+        this.pointListener = listener;
+    }
+
 }
