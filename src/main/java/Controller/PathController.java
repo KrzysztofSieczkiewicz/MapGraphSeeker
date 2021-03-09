@@ -1,7 +1,7 @@
 package Controller;
 
 import GUI.SearchPanel.SearchEvent;
-import Model.Database;
+import Model.PathDatabase;
 import Model.Path;
 import Model.PathInput;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class PathController {
 
     private static PathController pathController;
-    Database db = new Database();
+    PathDatabase db = new PathDatabase();
 
     /**
      * Empty constructor

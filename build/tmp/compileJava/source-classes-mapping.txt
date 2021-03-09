@@ -6,10 +6,12 @@ GUI/TablePanel.java
  GUI.TablePanel
 GUI/PointPanel/PointPanel.java
  GUI.PointPanel.PointPanel
+Model/PointDatabase.java
+ Model.PointDatabase
 GUI/PointPanel/PointEvent.java
  GUI.PointPanel.PointEvent
-Model/Database.java
- Model.Database
+Model/PathDatabase.java
+ Model.PathDatabase
 GUI/SearchPanel/SearchEvent.java
  GUI.SearchPanel.SearchEvent
 Model/PathInput.java
@@ -18,14 +20,18 @@ Controller/PathController.java
  Controller.PathController
 GUI/PathTableModel.java
  GUI.PathTableModel
-GUI/TextPanel.java
- GUI.TextPanel
+Controller/PointController.java
+ Controller.PointController
 GUI/TabbedInputPanel.java
  GUI.TabbedInputPanel
 GUI/PointPanel/PointListener.java
  GUI.PointPanel.PointListener
 Model/Path.java
  Model.Path
+Model/Point.java
+ Model.Point
+Model/PointInput.java
+ Model.PointInput
 GUI/SearchPanel/SearchListener.java
  GUI.SearchPanel.SearchListener
 GUI/SearchPanel/SearchPanel.java
