@@ -1,10 +1,12 @@
-package main.java.GUI.SearchPanel;
+package GUI.SearchPanel;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-
+/**
+ * Panel containing form for adding Points on map
+ */
 public class SearchPanel extends JPanel {
 
     private JTextField targetPostalCodeField;

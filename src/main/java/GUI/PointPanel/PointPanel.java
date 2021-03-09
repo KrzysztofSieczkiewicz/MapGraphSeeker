@@ -1,10 +1,12 @@
-package main.java.GUI.PointPanel;
+package GUI.PointPanel;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-
+/**
+ * Panel containing form for adding Points on map
+ */
 public class PointPanel extends JPanel {
 
     private JTextField addPointPostalCodeField;

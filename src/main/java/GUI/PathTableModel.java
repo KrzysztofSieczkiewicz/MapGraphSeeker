@@ -1,10 +1,13 @@
-package main.java.GUI;
+package GUI;
 
-import main.java.Model.Path;
+import Model.Path;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
+/**
+ * Model of table holding information about given path
+ */
 public class PathTableModel extends AbstractTableModel {
 
     private List<Path> db;
