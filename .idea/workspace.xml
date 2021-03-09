@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e371a26-a4c3-425b-acc8-9972c47c9023" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/PointPanel/PointPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/PointPanel/PointPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/SearchPanel/SearchPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MapGraphSeeker/GUI/SearchPanel/SearchPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/PointPanel/PointPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PointPanel/PointPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SearchPanel/SearchPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="6e371a26-a4c3-425b-acc8-9972c47c9023" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +12,53 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MapGraphSeeker" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MapGraphSeeker" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MapGraphSeeker" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MapGraphSeeker" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MapGraphSeeker" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,7 +80,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -106,6 +146,9 @@
       <updated>1585730943620</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
