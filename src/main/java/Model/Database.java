@@ -3,7 +3,9 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Database model holding methods for adding/modifying/removing data about Paths and Points
+ */
 public class Database {
 
     private ArrayList<Path> paths;

@@ -6,7 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-
+/**
+ * Panel holding table with information about paths
+ */
 public class TablePanel extends JPanel {
 
     private JTable table;

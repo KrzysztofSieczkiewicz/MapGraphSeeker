@@ -2,6 +2,9 @@ package GUI.SearchPanel;
 
 import java.util.EventObject;
 
+/**
+ * Class extending EventObject for handling data events in SearchPanel
+ */
 public class SearchEvent extends EventObject {
 
     String targetPostalCode;

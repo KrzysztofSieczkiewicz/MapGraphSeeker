@@ -8,7 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-
+/**
+ * MainFrame of application holding application's GUI
+ */
 public class MainFrame extends JFrame {
 
     private TablePanel tablePanel;

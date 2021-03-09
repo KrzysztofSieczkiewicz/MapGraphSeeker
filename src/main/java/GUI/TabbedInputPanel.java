@@ -5,7 +5,9 @@ import GUI.SearchPanel.SearchPanel;
 
 import javax.swing.*;
 
-
+/**
+ * Panel holding tabs for SearchPanel and PointPanel
+ */
 public class TabbedInputPanel extends JTabbedPane {
 
     private SearchPanel searchPanel;

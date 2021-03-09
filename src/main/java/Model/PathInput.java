@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Class for receiving information from PathController to be written into Database or displayed by GUI
+ */
 public class PathInput {
 
     private String targetPostalCode;

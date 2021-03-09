@@ -2,6 +2,9 @@ package GUI.PointPanel;
 
 import java.util.EventObject;
 
+/**
+ * Class extending EventObject for handling data events in PointPanel
+ */
 public class PointEvent extends EventObject {
 
     private String pointPostalCode;
@@ -14,6 +17,15 @@ public class PointEvent extends EventObject {
         super(source);
     }
 
+    /**
+     *
+     * @param source - object using PointEvent
+     * @param pointPostalCode
+     * @param pointCity
+     * @param pointStreet
+     * @param pointBuildingNo
+     * @param pointAptNo - apartment number
+     */
     public PointEvent(Object source, String pointPostalCode, String pointCity,
             String pointStreet, String pointBuildingNo, String pointAptNo) {
         super(source);

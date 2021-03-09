@@ -2,6 +2,9 @@ package Model;
 
 import java.util.HashMap;
 
+/**
+ * Path database model
+ */
 public class Path {
 
     private String targetPostalCode;
