@@ -1,32 +1,32 @@
 GUI/MainFrame.java
- main.java.GUI.MainFrame
+ GUI.MainFrame
 MapGraphSeeker.java
- main.java.MapGraphSeeker
+ MapGraphSeeker
 GUI/TablePanel.java
- main.java.GUI.TablePanel
+ GUI.TablePanel
 GUI/PointPanel/PointPanel.java
- main.java.GUI.PointPanel.PointPanel
+ GUI.PointPanel.PointPanel
 GUI/PointPanel/PointEvent.java
- main.java.GUI.PointPanel.PointEvent
+ GUI.PointPanel.PointEvent
 Model/Database.java
- main.java.Model.Database
+ Model.Database
 GUI/SearchPanel/SearchEvent.java
- main.java.GUI.SearchPanel.SearchEvent
+ GUI.SearchPanel.SearchEvent
 Model/PathInput.java
- main.java.Model.PathInput
+ Model.PathInput
 Controller/PathController.java
- main.java.Controller.PathController
+ Controller.PathController
 GUI/PathTableModel.java
- main.java.GUI.PathTableModel
+ GUI.PathTableModel
 GUI/TextPanel.java
- main.java.GUI.TextPanel
+ GUI.TextPanel
 GUI/TabbedInputPanel.java
- main.java.GUI.TabbedInputPanel
+ GUI.TabbedInputPanel
 GUI/PointPanel/PointListener.java
- main.java.GUI.PointPanel.PointListener
+ GUI.PointPanel.PointListener
 Model/Path.java
- main.java.Model.Path
+ Model.Path
 GUI/SearchPanel/SearchListener.java
- main.java.GUI.SearchPanel.SearchListener
+ GUI.SearchPanel.SearchListener
 GUI/SearchPanel/SearchPanel.java
- main.java.GUI.SearchPanel.SearchPanel
+ GUI.SearchPanel.SearchPanel

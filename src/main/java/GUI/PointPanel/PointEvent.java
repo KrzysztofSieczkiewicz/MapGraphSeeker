@@ -1,4 +1,4 @@
-package main.java.GUI.PointPanel;
+package GUI.PointPanel;
 
 import java.util.EventObject;
 

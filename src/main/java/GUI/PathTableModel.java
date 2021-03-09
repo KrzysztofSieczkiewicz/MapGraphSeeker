@@ -1,6 +1,6 @@
-package main.java.GUI;
+package GUI;
 
-import main.java.Model.Path;
+import Model.Path;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;

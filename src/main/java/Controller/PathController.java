@@ -1,14 +1,14 @@
-package main.java.Controller;
+package Controller;
 
-import main.java.GUI.SearchPanel.SearchEvent;
-import main.java.Model.Database;
-import main.java.Model.Path;
-import main.java.Model.PathInput;
+import GUI.SearchPanel.SearchEvent;
+import Model.Database;
+import Model.Path;
+import Model.PathInput;
 
 import java.util.List;
 
 /**
- * Gets input from SearchEvent from GUI part and starts
+ * Gets input from SearchEvent from GUI part and sends pathInput to
  *
  */
 public class PathController {

@@ -1,7 +1,7 @@
-package main.java.GUI;
+package GUI;
 
-import main.java.GUI.PointPanel.PointPanel;
-import main.java.GUI.SearchPanel.SearchPanel;
+import GUI.PointPanel.PointPanel;
+import GUI.SearchPanel.SearchPanel;
 
 import javax.swing.*;
 

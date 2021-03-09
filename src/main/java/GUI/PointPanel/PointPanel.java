@@ -1,4 +1,4 @@
-package main.java.GUI.PointPanel;
+package GUI.PointPanel;
 
 import javax.swing.*;
 import javax.swing.border.Border;

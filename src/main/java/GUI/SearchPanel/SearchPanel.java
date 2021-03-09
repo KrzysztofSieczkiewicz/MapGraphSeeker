@@ -1,4 +1,4 @@
-package main.java.GUI.SearchPanel;
+package GUI.SearchPanel;
 
 import javax.swing.*;
 import javax.swing.border.Border;

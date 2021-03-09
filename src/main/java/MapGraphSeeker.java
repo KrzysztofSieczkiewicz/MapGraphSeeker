@@ -1,6 +1,4 @@
-package main.java;
-
-import main.java.GUI.MainFrame;
+import GUI.MainFrame;
 
 import javax.swing.*;
 

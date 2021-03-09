@@ -1,6 +1,6 @@
-package main.java.GUI;
+package GUI;
 
-import main.java.Controller.PathController;
+import Controller.PathController;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;

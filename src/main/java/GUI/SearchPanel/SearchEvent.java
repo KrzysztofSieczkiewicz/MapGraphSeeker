@@ -1,4 +1,4 @@
-package main.java.GUI.SearchPanel;
+package GUI.SearchPanel;
 
 import java.util.EventObject;
 
